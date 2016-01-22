@@ -31,7 +31,10 @@
             \/5
           </li>
         <% end %>
-        Average rating: <%= restaurant.average_rating %>
+        <br>
+        <div>
+          <h3>Average rating: <%= restaurant.average_rating.to_i %></h3>
+        </div>
       </ul>
 
     <% else %>
