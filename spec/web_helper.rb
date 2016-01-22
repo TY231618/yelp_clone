@@ -16,6 +16,29 @@ end
 
 def create_restaurant
   click_link 'Add Restaurant'
-  fill_in 'Name', with: 'Pizza Hut'
+  fill_in 'Name', with: 'KFC'
   click_button 'Create Restaurant'
 end
+
+def leave_review(thoughts, rating)
+  visit '/restaurants'
+  sign_up
+  create_restaurant
+  click_link 'Review KFC'
+  fill_in 'Thoughts', with: thoughts
+  select rating, from: 'Rating'
+  click_button 'Leave Review'
+
+end
+
+def leave_review2(thoughts, rating)
+  visit '/restaurants'
+  sign_up2
+  click_link 'Review KFC'
+  fill_in 'Thoughts', with: thoughts
+  select rating, from: 'Rating'
+  click_button 'Leave Review'
+end
+# def already_signed_in
+#   visit '/restaurants'
+# end

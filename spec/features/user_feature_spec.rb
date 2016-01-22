@@ -52,18 +52,18 @@ feature "User can sign in and out" do
       create_restaurant
       click_link 'Sign out'
       sign_up2
-      expect(page).not_to have_link 'Edit Pizza Hut'
+      expect(page).not_to have_link 'Edit KFC'
     end
 
     it 'can only leave 1 review per restaurant' do
       visit('/')
       sign_up
       create_restaurant
-      click_link 'Review Pizza Hut'
+      click_link 'Review KFC'
       fill_in "Thoughts", with: "so so"
       select '3', from: 'Rating'
       click_button 'Leave Review'
-      click_link 'Review Pizza Hut'
+      click_link 'Review KFC'
       fill_in "Thoughts", with: "so so"
       select '3', from: 'Rating'
       click_button 'Leave Review'
