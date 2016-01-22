@@ -5,8 +5,9 @@ before_action :authenticate_user!, :except => [:index, :show]
   def index
     if user_signed_in?
       @current_user_id = current_user.id
-      
+
     end
+    
     @restaurants = Restaurant.all
   end
 

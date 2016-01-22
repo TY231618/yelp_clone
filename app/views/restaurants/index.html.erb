@@ -8,6 +8,9 @@
     <h3>
       <%= link_to "Review #{restaurant.name}", new_restaurant_review_path(restaurant) %>
     </h3>
+    <h3>
+      <!-- <%= link_to "Endorse Review", new_restaurant_review_path(restaurant) %> -->
+    </h3>
     <% if user_signed_in? && @current_user_id == restaurant.user_id %>
       <h3>
         <%= link_to "Edit #{restaurant.name}", edit_restaurant_path(restaurant) %>
@@ -28,12 +31,14 @@
             <strong>
               <%= star_rating(review.rating) %>
             </strong>
-            
+            <p><%= pluralize review.endorsements.length, 'endorsement' %></p>
+
           </li>
         <% end %>
         <br>
         <div>
           <h3>Average rating: <%= star_rating(restaurant.average_rating) %></h3>
+          <br>
         </div>
       </ul>
 
