@@ -5,6 +5,8 @@
     <h2>
       <%= link_to restaurant.name, restaurant_path(restaurant) %>
     </h2>
+    <br>
+    <%= image_tag restaurant.image.url(:thumb) %>
     <h3>
       <%= link_to "Review #{restaurant.name}", new_restaurant_review_path(restaurant) %>
     </h3>
@@ -39,7 +41,6 @@
           <br>
         </div>
       </ul>
-
     <% else %>
       <p>No reviews</p>
     <% end %>

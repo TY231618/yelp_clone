@@ -7,7 +7,7 @@ before_action :authenticate_user!, :except => [:index, :show]
       @current_user_id = current_user.id
 
     end
-    
+
     @restaurants = Restaurant.all
   end
 
@@ -29,7 +29,7 @@ before_action :authenticate_user!, :except => [:index, :show]
   end
 
   def restaurant_params
-    params.require(:restaurant).permit(:name)
+    params.require(:restaurant).permit(:name, :image)
   end
 
   def show
